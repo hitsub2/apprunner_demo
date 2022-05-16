@@ -2,8 +2,11 @@ from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.response import Response
 import os
+import logging
+
 
 def hello_world(request):
+    logging.info("This is my first log from hello world")
     name = os.environ.get('NAME')
     if name == None or len(name) == 0:
         name = "world"
